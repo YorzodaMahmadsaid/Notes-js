@@ -17,7 +17,18 @@ interviewQuestion('designer')('Said');
 let names: Array<string> = ['Said', 'Navruz', 'Jonon'];
 console.log(names);
 
-let arrayOfNames: string[] = ['Said', 'Navruz', 'Firuz'];
-console.log(arrayOfNames);
+let names: string[] = ['Said', 'Navruz', 'Firuz'];
+console.log(names);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+fetch('https://jsonplaceholder.typicode.com/todos/2')
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err => console.log(err));
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
