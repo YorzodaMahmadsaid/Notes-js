@@ -1,2 +1,4 @@
 # Notes-js
-https://themewagon.com html template for free
+HTML FREE TAMPLATE
+https://themewagon.com 
+https://themefisher.com/
