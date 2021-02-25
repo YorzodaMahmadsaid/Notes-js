@@ -42,3 +42,27 @@ async function getData(){
 getData().then();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Iphone {
+    constructor(memory, color, price) {
+        this.memory = memory;
+        this.color = color;
+        this.price = price;
+    }
+
+    whois() {
+        console.log('Память: ' + this.memory + 'Gb. Цветь ' + this.color + '. Цена:' + this.price + ' Сомон');
+    }
+}
+
+Iphone_object_1 = new Iphone(64, 'Black', 12000);
+Iphone_object_2 = new Iphone(112, 'White', 14000);
+Iphone_object_3 = new Iphone(256, 'Gold', 15000);
+Iphone_object_4 = new Iphone(512, 'Red', 16000);
+
+Iphone_object_1.whois(); //Память: 64Gb. Цветь Black. Цена:12000 Сомон
+Iphone_object_2.whois(); //Память: 112Gb. Цветь White. Цена:14000 Сомон
+Iphone_object_3.whois(); //Память: 256Gb. Цветь Gold. Цена:15000 Сомон
+Iphone_object_4.whois(); //Память: 512Gb. Цветь Red. Цена:16000 Сомон
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
