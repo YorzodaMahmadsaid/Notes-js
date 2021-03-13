@@ -66,3 +66,20 @@ Iphone_object_3.whois(); //Память: 256Gb. Цветь Gold. Цена:15000 
 Iphone_object_4.whois(); //Память: 512Gb. Цветь Red. Цена:16000 Сомон
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import React, {useState} from 'react';
+
+export default function App() {
+
+    const [textButton, setTextButton] = useState('Click me!');
+    return (
+        <div>
+            <button onClick={() => {
+                    setTextButton('You are click to me now!');
+                }}>{textButton}
+            </button>
+        </div>
+    )
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
