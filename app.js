@@ -83,3 +83,24 @@ export default function App() {
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+export default function Greet(props) {
+    console.log(props); // name: "Mahmadsaid", job: "Web Developer", city: "Dushanbe"
+    return (
+        <div>
+            <h3>My name is {props.name}</h3>
+            <h3>I am {props.job}</h3>
+            <h3>I live in city of {props.city}</h3>
+        </div>
+    )
+}
+
+ReactDOM.render(
+    <Greet name="Mahmadsaid" job="Web Developer" city="Dushanbe"/>,
+    document.getElementById('root')
+);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
