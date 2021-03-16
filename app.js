@@ -109,7 +109,8 @@ export default class Greet extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            showResult: true
+            showResult: true,
+            buttonText: 'Hide field'
         }
     }
 
@@ -122,9 +123,11 @@ export default class Greet extends React.Component {
                 {this.state.showResult ? <div><h3>Field two</h3></div> : null}
                 <button onClick={() => {
                     this.setState({
-                        showResult: false
+                        showResult: !this.state.showResult,
+                        buttonText: 'Show field'
+
                     })
-                }}>Hide field</button>
+                }}>{this.state.buttonText}</button>
             </div>
         )
     }
