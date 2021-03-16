@@ -104,3 +104,30 @@ ReactDOM.render(
 );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export default class Greet extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            showResult: true
+        }
+    }
+
+    render() {
+        return(
+            <div>
+                <div>
+                    <h3>Field one</h3>
+                </div>
+                {this.state.showResult ? <div><h3>Field two</h3></div> : null}
+                <button onClick={() => {
+                    this.setState({
+                        showResult: false
+                    })
+                }}>Hide field</button>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<Greet/>, document.getElementById('root'));
