@@ -134,3 +134,50 @@ export default class Greet extends React.Component {
 }
 
 ReactDOM.render(<Greet/>, document.getElementById('root'));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export default function Greet() {
+    const [data, setData] = useState([{name: 'Yorzoda', age: 30, city: 'Dushanbe'}, {name: 'Mahmadsaid', age: 23, city: 'Norak'}]);
+    const [infoInput, setInfoInput] = useState({name: '', age: '', city: ''});
+    console.log(infoInput);
+    return(
+        <div>
+            {
+                data.map(elOfData => {
+                return(
+                    <div>
+                        <span>{elOfData.name} - {elOfData.age} - {elOfData.city}</span>
+                    </div>
+                )})
+            }
+            <input type="text" placeholder="name" onChange={(e) => {
+                setInfoInput({
+                    name: e.target.value,
+                    age: infoInput.age,
+                    city: infoInput.city
+                })
+            }}/>
+            <input type="text" placeholder="age" onChange={(e) => {
+                setInfoInput({
+                    age: e.target.value,
+                    name: infoInput.name,
+                    city: infoInput.city
+                })
+            }}/>
+            <input type="text" placeholder="city" onChange={(e) => {
+                setInfoInput({
+                    city: e.target.value,
+                    name: infoInput.name,
+                    age: infoInput.age
+                })
+            }}/>
+            <button onClick={() => {
+                    setData(data => ([...data, infoInput])) }}>
+                Add
+            </button>
+        </div>
+    )
+}
+
+ReactDOM.render(<Greet/>, document.getElementById('root'));
