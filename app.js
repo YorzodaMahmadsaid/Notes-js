@@ -181,3 +181,30 @@ export default function Greet() {
 }
 
 ReactDOM.render(<Greet/>, document.getElementById('root'));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export default function MyForm() {
+    const [data, setData] = useState([{name: 'Mahmadsaid'}]);
+    const [name, setName] = useState({name: ''});
+    return(
+        <div>
+            {
+                data.map(elementOfData => {
+                    return (<div>{elementOfData.name}</div>)
+                })
+            }
+            <input type="text" placeholder="name" onChange={e => {
+                setName({name: e.target.value})
+            }}/>
+            <button type="submit" onClick={() => {
+                setData(data => {
+                    return ([...data, name]);
+                })}
+
+            }>
+                Add
+            </button>
+        </div>
+    )
+}
