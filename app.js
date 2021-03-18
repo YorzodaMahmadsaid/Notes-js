@@ -187,24 +187,22 @@ ReactDOM.render(<Greet/>, document.getElementById('root'));
 export default function MyForm() {
     const [data, setData] = useState([{name: 'Mahmadsaid'}]);
     const [name, setName] = useState({name: ''});
+
+    function submitName() {
+        setData(data => {
+        return ([...data, name]);
+        })
+    }
+
+    function handleNameInput(e) {
+        setName({name: e.target.value});
+    }
+
     return(
         <div>
-            {
-                data.map(elementOfData => {
-                    return (<div>{elementOfData.name}</div>)
-                })
-            }
-            <input type="text" placeholder="name" onChange={e => {
-                setName({name: e.target.value})
-            }}/>
-            <button type="submit" onClick={() => {
-                setData(data => {
-                    return ([...data, name]);
-                })}
-
-            }>
-                Add
-            </button>
+            { data.map((userName, index) => <div key={index}>{userName.name}</div>) }
+            <input type="text" placeholder="name" onChange={handleNameInput}/>
+            <button type="submit" onClick={submitName}>Add</button>
         </div>
     )
 }
