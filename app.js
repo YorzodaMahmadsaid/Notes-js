@@ -270,3 +270,30 @@ export default function MyForm() {
         </div>
     )
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+import React from "react";
+import ReactDOM from 'react-dom';
+import { useForm } from "react-hook-form";
+
+export default function Greet() {
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = data => console.log(data);
+
+    return (
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input placeholder="firstName" name="firstName" ref={register} />
+            <input placeholder="lastName" name="lastName" ref={register} />
+            <input placeholder="age" name="age" ref={register} />
+            <input placeholder="city" name="city" ref={register} />
+            <input placeholder="job" name="job" ref={register} />
+            <select placeholder="gender" name="gender" ref={register}>
+                <option value="female">female</option>
+                <option value="male">male</option>
+            </select>
+            <input type="submit" />
+        </form>
+    );
+}
