@@ -182,7 +182,7 @@ export default function Greet() {
 
 ReactDOM.render(<Greet/>, document.getElementById('root'));
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export default function MyForm() {
     const [data, setData] = useState([{name: 'Mahmadsaid'}]);
@@ -203,6 +203,70 @@ export default function MyForm() {
             { data.map((userName, index) => <div key={index}>{userName.name}</div>) }
             <input type="text" placeholder="name" onChange={handleNameInput}/>
             <button type="submit" onClick={submitName}>Add</button>
+        </div>
+    )
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+export default function MyForm() {
+    const [data, setData] = useState([{name: 'Mahmadsaid', age: '30', city: 'Dushanbe', job: 'Web developer'}]);
+    const [persianInfo, setPersianInfo] = useState({name: '', age: '', city: '', job: ''});
+    
+    function submitInfo() {
+        setData(data => ([...data, persianInfo]))
+    }
+
+    function handleChangeName(e) {
+        setPersianInfo({
+            name: e.target.value,
+            age: persianInfo.age,
+            city: persianInfo.city,
+            job: persianInfo.job,
+        });
+    }
+    
+    function handleChangeAge(e) {
+        setPersianInfo({
+            age: e.target.value,
+            name: persianInfo.name,
+            city: persianInfo.city,
+            job: persianInfo.job,
+        });
+    }
+    
+    function handleChangeCity(e) {
+        setPersianInfo({
+            city: e.target.value,
+            age: persianInfo.age,
+            name: persianInfo.name,
+            job: persianInfo.job,
+        });
+    }
+    
+    function handleChangeJob(e) {
+        setPersianInfo({
+            job: e.target.value,
+            age: persianInfo.age,
+            city: persianInfo.city,
+            name: persianInfo.name,
+        });
+    }
+
+    function getElements() {
+       return data.map((userInfo, index) => {
+            return <div key={index}>{userInfo.name} - {userInfo.age} - {userInfo.city} - {userInfo.job}</div>
+        })
+    }
+
+    return(
+        <div>
+            <div>{getElements()}</div>
+            <input type="text" placeholder="name" onChange={handleChangeName}/>
+            <input type="text" placeholder="age" onChange={handleChangeAge}/>
+            <input type="text" placeholder="city" onChange={handleChangeCity}/>
+            <input type="text" placeholder="job" onChange={handleChangeJob}/>
+            <button type="submit" onClick={submitInfo}>Add</button>
         </div>
     )
 }
