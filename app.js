@@ -297,3 +297,17 @@ export default function Greet() {
         </form>
     );
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const person = {
+    name: 'Mahmadsaid',
+    age: 30,
+    logInfo: function() {
+        console.log(`Name is ${person.name}`);
+        console.log(`Name is ${this.name}`);
+
+        console.log(`Age is ${person.age}`);
+        console.log(`Age is ${this.age}`);
+    }
+};
