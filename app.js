@@ -244,6 +244,7 @@ export default function MyForm() {
         });
     }
     
+   
     function handleChangeJob(e) {
         setPersianInfo({
             job: e.target.value,
@@ -311,3 +312,37 @@ const person = {
         console.log(`Age is ${this.age}`);
     }
 };
+
+
+
+const isLoading: boolean = true;
+
+const num: number = 1;
+
+const message: string = 'Hello TyteScript';
+
+const numberArray: number[] = [1, 2, 3, 4, 5, 6, 7];
+const numberArray2: Array<number> = [1, 2, 3, 4, 5, 6, 7];
+
+const words: string[] = ['Hello', 'World'];
+const words2: Array<string> = ['Hello', 'World'];
+
+const contact: [number, string, boolean] = [12345, 'Mahmadsaid', true];
+
+const anyType: any[] = [23, 'hello', true];
+
+function sayHello(text: string ): void {
+   console.log(text);
+}
+sayHello('Hello');
+
+function throwError(message: string): never {
+    throw new Error(message);
+}
+
+type Login = string;
+const login: Login = 'admin';
+
+type ID = string | number;
+const ID1: ID = 123;
+const ID2: ID = '123';
